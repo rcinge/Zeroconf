@@ -79,10 +79,10 @@ namespace ZeroconfTest.Xam
             //});
 
 
-            var domains = await ZeroconfResolver.BrowseDomainsAsync();
+            // var domains = await ZeroconfResolver.BrowseDomainsAsync();
 
-            responses = await ZeroconfResolver.ResolveAsync(domains.Select(g => g.Key));
-                
+            // responses = await ZeroconfResolver.ResolveAsync(domains.Select(g => g.Key));
+            responses = await BonjourScaffold.ResolveAsync("_audioplayer-discovery._tcp.local.");
 
             foreach (var resp in responses)
             {
